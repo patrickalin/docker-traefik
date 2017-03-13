@@ -35,10 +35,10 @@ entryPoint = "https"
 #    main = "helloworld.services.alin.be"
 #[[acme.domains]]
 #    main = "portainer.services.alin.be"
-#[[acme.domains]]
-#    main = "doc.services.alin.be"
-#[[acme.domains]]
-#    main = "monitoring.services.alin.be"
+[[acme.domains]]
+     main = "documentation.services.alin.be"
+[[acme.domains]]
+    main = "monitoring.services.alin.be"
 #[[acme.domains]]
 #    main = "employer.services.alin.be"
 #[[acme.domains]]
