@@ -1,0 +1,68 @@
+debug = true
+logLevel = "DEBUG"
+
+[entryPoints]
+  [entryPoints.http]
+      address = ":80"
+# [entryPoints.http.redirect]
+#     entryPoint = "https"
+  [entryPoints.https]
+      address = ":443"
+      [entryPoints.https.tls]
+
+[acme]
+email= "patrickalin@gmail.com"
+storageFile= "/etc/traefik/acme/acme.json"
+entryPoint = "https"
+
+#[[acme.domains]]
+#    main = "gogs.services.alin.be"
+#[[acme.domains]]
+#    main = "services.alin.be"
+#[[acme.domains]]
+#    main = "apistat.services.alin.be"
+#[[acme.domains]]
+#    main = "rancher.services.alin.be"
+[[acme.domains]]
+    main = "traefik.services.alin.be"
+#[[acme.domains]]
+#    main = "traefiksecure.services.alin.be"
+#[[acme.domains]]
+#    main = "gitlab.services.alin.be"
+#[[acme.domains]]
+#    main = "cssjnd.services.alin.be"
+#[[acme.domains]]
+#    main = "helloworld.services.alin.be"
+#[[acme.domains]]
+#    main = "portainer.services.alin.be"
+#[[acme.domains]]
+#    main = "doc.services.alin.be"
+#[[acme.domains]]
+#    main = "monitoring.services.alin.be"
+#[[acme.domains]]
+#    main = "employer.services.alin.be"
+#[[acme.domains]]
+#    main = "hello.services.alin.be"
+#[[acme.domains]]
+#    main = "file.services.alin.be"
+#[[acme.domains]]
+#    main = "api.services.alin.be"
+#[[acme.domains]]
+#    main = "apidashboard.services.alin.be"
+#[[acme.domains]]
+#    main = "apistat.services.alin.be"
+#[[acme.domains]]
+#    main = "alert.services.alin.be"
+################################################################
+# Web configuration backend
+################################################################
+[web]
+address = ":81"
+
+################################################################
+# Docker configuration backend
+################################################################
+[docker]
+endpoint = "unix:///var/run/docker.sock"
+domain = "services.alin.be"
+watch = true
