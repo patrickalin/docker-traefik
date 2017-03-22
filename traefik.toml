@@ -31,22 +31,22 @@ entryPoint = "https"
 #    main = "gitlab.services.alin.be"
 #[[acme.domains]]
 #    main = "cssjnd.services.alin.be"
-#[[acme.domains]]
-#    main = "helloworld.services.alin.be"
-#[[acme.domains]]
-#    main = "portainer.services.alin.be"
+[[acme.domains]]
+     main = "helloworld.services.alin.be"
+[[acme.domains]]
+    main = "portainer.services.alin.be"
 [[acme.domains]]
      main = "documentation.services.alin.be"
 [[acme.domains]]
     main = "monitoring.services.alin.be"
-#[[acme.domains]]
-#    main = "employer.services.alin.be"
-#[[acme.domains]]
-#    main = "hello.services.alin.be"
-#[[acme.domains]]
-#    main = "file.services.alin.be"
-#[[acme.domains]]
-#    main = "api.services.alin.be"
+[[acme.domains]]
+    main = "employer.services.alin.be"
+[[acme.domains]]
+    main = "hello.services.alin.be"
+[[acme.domains]]
+    main = "file.services.alin.be"
+[[acme.domains]]
+    main = "api.services.alin.be"
 #[[acme.domains]]
 #    main = "apidashboard.services.alin.be"
 #[[acme.domains]]
