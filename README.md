@@ -1,7 +1,5 @@
-# traefik-docker
+# docker-traefik
 Docker traefik
 
-Admin Port :81
-Services Port :80
-
-https://traefik.services.alin.be/dashboard/#/
+* Services Port :80
+* Admin Port :81 https://traefik.services.alin.be/dashboard/#/
