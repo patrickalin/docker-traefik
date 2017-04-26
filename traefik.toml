@@ -19,8 +19,8 @@ entryPoint = "https"
 #    main = "gogs.services.alin.be"
 #[[acme.domains]]
 #    main = "services.alin.be"
-#[[acme.domains]]
-#    main = "apistat.services.alin.be"
+[[acme.domains]]
+    main = "apistat.services.alin.be"
 #[[acme.domains]]
 #    main = "rancher.services.alin.be"
 [[acme.domains]]
@@ -47,12 +47,18 @@ entryPoint = "https"
     main = "file.services.alin.be"
 [[acme.domains]]
     main = "api.services.alin.be"
-#[[acme.domains]]
-#    main = "apidashboard.services.alin.be"
-#[[acme.domains]]
-#    main = "apistat.services.alin.be"
-#[[acme.domains]]
-#    main = "alert.services.alin.be"
+[[acme.domains]]
+    main = "homeassistant.services.alin.be"
+[[acme.domains]]
+    main = "apidashboard.services.alin.be"
+[[acme.domains]]
+    main = "visualizer.services.alin.be"
+[[acme.domains]]
+    main = "apistat.services.alin.be"
+[[acme.domains]]
+    main = "alert.services.alin.be"
+[[acme.domains]]
+    main = "statsd.services.alin.be"
 ################################################################
 # Web configuration backend
 ################################################################
