@@ -1,4 +1,4 @@
-debug = true
+#debug = true
 logLevel = "DEBUG"
 
 [entryPoints]
@@ -59,6 +59,10 @@ entryPoint = "https"
     main = "alert.services.alin.be"
 [[acme.domains]]
     main = "statsd.services.alin.be"
+[[acme.domains]]
+    main = "influxdb.services.alin.be"
+[[acme.domains]]
+    main = "kibana.services.alin.be"
 ################################################################
 # Web configuration backend
 ################################################################
