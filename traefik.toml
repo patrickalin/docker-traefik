@@ -1,5 +1,5 @@
 #debug = true
-logLevel = "DEBUG"
+#logLevel = "DEBUG"
 
 [entryPoints]
   [entryPoints.http]
