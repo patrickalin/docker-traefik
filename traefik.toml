@@ -27,12 +27,14 @@ entryPoint = "https"
     main = "traefik.services.alin.be"
 #[[acme.domains]]
 #    main = "traefiksecure.services.alin.be"
-#[[acme.domains]]
-#    main = "gitlab.services.alin.be"
+[[acme.domains]]
+    main = "gitlab.services.alin.be"
 #[[acme.domains]]
 #    main = "cssjnd.services.alin.be"
 [[acme.domains]]
      main = "helloworld.services.alin.be"
+[[acme.domains]]
+     main = "che.services.alin.be"
 [[acme.domains]]
     main = "portainer.services.alin.be"
 [[acme.domains]]
@@ -63,6 +65,8 @@ entryPoint = "https"
     main = "influxdb.services.alin.be"
 [[acme.domains]]
     main = "kibana.services.alin.be"
+[[acme.domains]]
+    main = "bloomsky.services.alin.be"
 ################################################################
 # Web configuration backend
 ################################################################

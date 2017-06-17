@@ -1,8 +1,8 @@
-version: '3'
+version: '3.2'
 
 services:
   traefik:
-    image: traefik:v1.2.3
+    image: traefik:v1.3.1
     container_name: traefik
     ports:
       - "80:80"
