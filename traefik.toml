@@ -67,6 +67,8 @@ entryPoint = "https"
     main = "kibana.services.alin.be"
 [[acme.domains]]
     main = "bloomsky.services.alin.be"
+[[acme.domains]]
+    main = "visualizer.services.alin.be"
 ################################################################
 # Web configuration backend
 ################################################################
