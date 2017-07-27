@@ -1,5 +1,8 @@
 #debug = true
+#traefikLogsFile = "/etc/traefik/log/traefik.log"
+#accessLogsFile = "/etc/traefik/log/access.log"
 #logLevel = "DEBUG"
+InsecureSkipVerify = true
 
 [entryPoints]
   [entryPoints.http]
