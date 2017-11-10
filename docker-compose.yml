@@ -1,33 +1,33 @@
-version: '3.2'
+version: '3.3'
 
 services:
   traefik:
-    image: traefik:v1.3.3
-    container_name: traefik
+    image: traefik:v1.4.2-alpine
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+      restart_policy:
+        condition: on-failure
+      labels:
+        - traefik.port=81
+        - traefik.frontend.rule=Host:traefik.services.alin.be
+        - traefik.frontend.entryPoints=https,http
+        - traefik.docker.network=traefik-net
     ports:
+# it's a RP, everithing is on :80 or :443
       - "80:80"
       - "443:443"
-# Admin 81
-      - "81:81"
     volumes:
-# Automatic discover docker
       - /var/run/docker.sock:/var/run/docker.sock
       - ./traefik.toml:/etc/traefik/traefik.toml
       - ./acme.json:/etc/traefik/acme/acme.json
       - ./keys/:/etc/traefik/keys/
       - ./log/traefik.log:/etc/traefik/log/traefik.log
       - ./log/access.log:/etc/traefik/log/access.log
-    labels:
-      - traefik.port=81
-      - traefik.frontend.rule=Host:traefik.services.alin.be
-      - traefik.frontend.entryPoints=https,http
-    networks:
-      - webgateway
-      - web
- 
+      - ./localtime:/etc/localtime
+
 networks:
-  webgateway:
-    driver: bridge
-  web:
+  default:
     external:
-      name: traefik_webgateway
+      name: traefik-net 
