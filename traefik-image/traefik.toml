@@ -1,0 +1,74 @@
+################################################################
+# Global Configuration - Main Section
+################################################################
+
+#debug = true
+InsecureSkipVerify = true
+
+################################################################
+# Global Configuration - Log Section
+################################################################
+
+logLevel = "ERROR"
+traefikLogsFile = "/etc/traefik/log/traefik.log"
+[accessLog]
+filePath = "/etc/traefik/log/access.log"
+
+################################################################
+# Entry Points Definition
+################################################################
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+#  [entryPoints.http.auth.basic]
+#  users = ["admin:$apr1$gWiqD1WO$kJ1Im7XyH2pH5V/D/DmcL."]
+#    [entryPoints.http.redirect]
+#    entryPoint = "https"
+  [entryPoints.https]
+  address = ":443"
+      [entryPoints.https.tls]
+
+################################################################
+# ACME (Let's Encrypt) configuration
+################################################################
+
+[acme]
+email= "patrickalin@gmail.com"
+storage= "/etc/traefik/acme/acme.json"
+entryPoint = "https"
+acmeLogging= true
+onHostRule = true
+
+#[[acme.domains]]
+#main = "services.alin.be"
+#sans = ["whoami.services.alin.be","grafana.services.alin.be"]
+
+[[acme.domains]]
+main = "documentation.services.alin.be"
+
+[[acme.domains]]
+main = "registry.services.alin.be"
+
+################################################################
+# Web Backend
+################################################################
+
+[web]
+address = ":81"
+
+[web.auth.basic]
+users = ["admin:$apr1$x6DlzZ7s$v6vd2UbSO/bhoSIHnYE4D1"]
+
+[web.metrics.prometheus]
+
+################################################################
+# Docker configuration backend
+################################################################
+[docker]
+#endpoint = "tcp://127.0.0.1:2375"
+
+domain = "services.alin.be"
+docker = true
+watch = true
+swarmmode = true
