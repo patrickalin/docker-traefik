@@ -1,4 +1,4 @@
-FROM traefik:v1.4.5-alpine
+FROM traefik:v1.5-alpine
 COPY traefik.toml /etc/traefik/traefik.toml
 COPY localtime /etc/localtime
 RUN apk add --update bash curl

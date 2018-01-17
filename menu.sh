@@ -24,10 +24,12 @@ case "$OPTION" in
     truncate -s 0 access.log
     truncate -s 0 traefik.log
     cd ../..
-    docker stack remove  $SERVICE
+    docker-compose down
+    docker-compose rm
     sleep 3
-    docker stack deploy --compose-file docker-compose.yml $SERVICE
+    docker-compose up -d 
     ;;
-3)  docker stack remove  $SERVICE
+3)  docker-compose stop
+    docker-compose rm
     ;;
 esac

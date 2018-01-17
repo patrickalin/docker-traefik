@@ -1,24 +1,13 @@
-version: '3.3'
+version: '3.5'
 
 services:
   traefik:
     image: traefik-image
-    deploy:
-      placement:
-        constraints:
-          - node.role == manager
-      restart_policy:
-        condition: on-failure
-      labels:
-        - traefik.port=81
-        - traefik.frontend.rule=Host:traefik.services.alin.be
-        - traefik.frontend.entryPoints=https,http
-        - traefik.docker.network=traefik-net
     ports:
 # it's a RP, everithing is on :80 or :443
       - "80:80"
       - "443:443"
-#      - "81:81"
+      - "81:81"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./traefik/acme.json:/etc/traefik/acme/acme.json

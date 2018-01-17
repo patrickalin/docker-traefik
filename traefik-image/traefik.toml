@@ -50,6 +50,9 @@ main = "documentation.services.alin.be"
 [[acme.domains]]
 main = "registry.services.alin.be"
 
+[[acme.domains]]
+main = "visualizer.services.alin.be"
+
 ################################################################
 # Web Backend
 ################################################################
