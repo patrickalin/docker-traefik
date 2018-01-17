@@ -18,6 +18,8 @@ filePath = "/etc/traefik/log/access.log"
 # Entry Points Definition
 ################################################################
 
+InsecureSkipVerify=true
+defautEntryPoints= ["http","https","ws","wss"] 
 [entryPoints]
   [entryPoints.http]
   address = ":80"
@@ -34,6 +36,7 @@ filePath = "/etc/traefik/log/access.log"
 ################################################################
 
 [acme]
+#dnsProvider = "ovh"
 email= "patrickalin@gmail.com"
 storage= "/etc/traefik/acme/acme.json"
 entryPoint = "https"
@@ -50,9 +53,6 @@ main = "documentation.services.alin.be"
 [[acme.domains]]
 main = "registry.services.alin.be"
 
-[[acme.domains]]
-main = "visualizer.services.alin.be"
-
 ################################################################
 # Web Backend
 ################################################################
@@ -60,10 +60,10 @@ main = "visualizer.services.alin.be"
 [web]
 address = ":81"
 
+[web.metrics.prometheus]
+
 [web.auth.basic]
 users = ["admin:$apr1$x6DlzZ7s$v6vd2UbSO/bhoSIHnYE4D1"]
-
-[web.metrics.prometheus]
 
 ################################################################
 # Docker configuration backend

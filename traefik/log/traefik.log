@@ -1,0 +1,6 @@
+time="2018-01-17T21:18:56+01:00" level=error msg="map[blackbox.services.alin.be:[blackbox.services.alin.be] acme: Could not determine solvers]" 
+time="2018-01-17T21:18:56+01:00" level=error msg="Error getting ACME certificates [blackbox.services.alin.be] : Cannot obtain certificates map[blackbox.services.alin.be:[blackbox.services.alin.be] acme: Could not determine solvers]+v" 
+time="2018-01-17T21:20:56+01:00" level=error msg="map[blackbox.services.alin.be:[blackbox.services.alin.be] acme: Could not determine solvers]" 
+time="2018-01-17T21:20:56+01:00" level=error msg="Error getting ACME certificates [blackbox.services.alin.be] : Cannot obtain certificates map[blackbox.services.alin.be:[blackbox.services.alin.be] acme: Could not determine solvers]+v" 
+time="2018-01-17T21:21:13+01:00" level=error msg="map[blackbox.services.alin.be:[blackbox.services.alin.be] acme: Could not determine solvers]" 
+time="2018-01-17T21:21:13+01:00" level=error msg="Error getting ACME certificates [blackbox.services.alin.be] : Cannot obtain certificates map[blackbox.services.alin.be:[blackbox.services.alin.be] acme: Could not determine solvers]+v" 
