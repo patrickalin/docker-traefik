@@ -1,3 +1,2 @@
-acme.json
-log/access.log
-log/traefik.log
+traefik/log/access.log
+traefik/log/traefik.log

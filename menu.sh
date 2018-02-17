@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVICE="traefik"
+SERVICE="$(basename `pwd` | cut -d'-' -f 2)"
 IMAGE="$SERVICE-image"
 
 OPTION=$(whiptail --title $SERVICE --menu "Choose your option" 15 60 4 \
