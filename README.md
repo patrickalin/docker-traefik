@@ -2,6 +2,7 @@
 Docker traefik
 
 - git clone https://github.com/patrickalin/docker-traefik.git
+- vi traefik-image/traefik.toml (change users password)
 - ./menu.sh (build, deploy)
 
 * Services Port :80,:443
