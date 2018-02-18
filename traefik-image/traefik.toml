@@ -39,9 +39,11 @@ defautEntryPoints= ["http","https","ws","wss"]
 #dnsProvider = "ovh"
 email= "patrickalin@gmail.com"
 storage= "/etc/traefik/acme/acme.json"
-entryPoint = "https"
 acmeLogging= true
 onHostRule = true
+entryPoint = "https"
+[acme.httpChallenge]
+  entryPoint = "http"
 
 #[[acme.domains]]
 #main = "services.alin.be"
