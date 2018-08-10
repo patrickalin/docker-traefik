@@ -13,22 +13,24 @@ services:
         - traefik.port=81
         - traefik.frontend.rule=Host:traefik.services.alin.be
         - traefik.frontend.entryPoints=https,http
+        - traefik.frontend.redirect.entryPoint=https
         - traefik.docker.network=traefik-net
     ports:
 # it's a RP, everithing is on :80 or :443
       - "80:80"
       - "443:443"
-    environment:
-      - OVH_ENDPOINT="ovh-eu"
-      - OVH_APPLICATION_KEY="s50WW7M2CYG0UxTf"
-      - OVH_APPLICATION_SECRET="AtryICi652E1CUb4j8BBxMlAf7g9QHsf"
-      - OVH_CONSUMER_KEY="MV7154G2zY8OpiXHr0QuIkZqOS4mBmH9"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./traefik/acme.json:/etc/traefik/acme/acme.json
       - ./traefik/keys/:/etc/traefik/keys/
       - ./traefik/log/traefik.log:/etc/traefik/log/traefik.log
       - ./traefik/log/access.log:/etc/traefik/log/access.log
+        #healthcheck:
+            #test: ["CMD", "traefik healthcheck"]
+       #interval: 1m30s
+       #timeout: 10s
+       # retries: 3
+       #       start_period: 40s
 
 networks:
   default:
